@@ -21,3 +21,7 @@ RadBot (Radiation Robot) is a tethered, manually operated robot that has the abi
 - Visualize: Software used to visualize data for use in RVIZ, primarily mapping and radiation detection software. 
 - Interface: Software used to either establish working directories for ROS on the ground station, or scripts to link subsytems.
 - Catkin_ws: A copy of our current ROS working directory.
+
+## Tutorial Links
+- Husky Cartographer Tutorial:  https://github.com/husky/husky_cartographer_navigation
+- Heatmap Tutorial: https://wiki.ros.org/rviz/Tutorials/Markers:%20Basic%20Shapes
