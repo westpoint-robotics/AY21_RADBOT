@@ -1,0 +1,68 @@
+'*******************************************************************************8
+'VARIABLE DECLARATION:
+'TD: DIAMETER TETHER (micrometers, 10^-6 m)
+Dim TD As  Integer
+dT = 12500
+
+'SD = DIAMETER SPOOL (micrometers)
+Dim SD As Integer
+SD = 38100
+
+'SH = HEIGHT, SPOOL (micrometers)
+Dim SH As Integer
+SH = 234950
+
+'TV1 = set top value of motor 1
+Dim TV1 as Integer 
+'TV1 = f(top robot speed)
+
+'TV2 = set top value of motor 2
+Dim TV2 as Integer 
+'TV2 = f(top robot speed)
+
+'gv = VELOCITY, ROBOT (millimeters / s) -1500 < gv < 1500
+Dim gv As Integer
+gv = 0
+
+Dim gv As Integer
+'m1dir = Direction, Motor 1 (unitless)
+Dim M1Dir As Integer
+
+'e1 = encoder count, 0 is start point
+Dim e1 As Integer
+e1 = 2
+
+print("End variable declaration\n")
+
+'*******************************************************************************
+top:
+'READ INPUT DATA
+'Encoder ranges from 0 to 1000000
+'MULTIPLY
+print("e1 = ", e1, "\n")
+e1*=2
+
+'IMU Data ramps from 0 to 1500
+if gv < 500
+	gv += ramp*10
+end if
+
+'Ranges between 500 to 1000
+
+if 500 <= gv <= 1000
+	gv += ramp*5
+end if
+'Ramps between 1000 to 1500
+if 1000 <= gv <= 1500
+	gv += ramp*2
+end if 
+
+if 1000
+
+
+if e1 > 1000000 then
+	Terminate
+else
+	goto top
+End If
+
