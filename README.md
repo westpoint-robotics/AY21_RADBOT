@@ -1,4 +1,4 @@
-# RadBot
+# RADBOT
 
 ## Project Description
 RadBot (Radiation Robot) is a tethered, manually operated robot that has the ability to operate in high-radiation environments with the purpose of performing unmanned reconnaissance
@@ -17,10 +17,16 @@ RadBot (Radiation Robot) is a tethered, manually operated robot that has the abi
 - Ubuntu 16.04
 
 ## Github Files Info
-- Control: Software used in the physical control of the robot or its subsystems
-- Visualize: Software used to visualize data for use in RVIZ, primarily mapping and radiation detection software. 
-- Interface: Software used to either establish working directories for ROS on the ground station, or scripts to link subsytems.
-- Catkin_ws: A copy of our current ROS working directory.
+
+## Where to Start?
+Become familiar with ROS (http://wiki.ros.org/ROS/StartGuide)
+Become familiar with C and C++
+
+
+### Setting Up Catkin Workspace
+Catkin is the official build system of ROS and the successor to the original ROS build system, rosbuild. catkin combines CMake macros and Python scripts to provide some functionality on top of CMake's normal workflow. catkin was designed to be more conventional than rosbuild, allowing for better distribution of packages, better cross-compiling support, and better portability. catkin's workflow is very similar to CMake's but adds support for automatic 'find package' infrastructure and building multiple, dependent projects at the same time. The name catkin comes from the tail-shaped flower cluster found on willow trees -- a reference to Willow Garage where catkin was created. (http://wiki.ros.org/catkin/conceptual_overview)
+
+Create a workspace: http://wiki.ros.org/catkin/Tutorials/create_a_workspace
 
 ## Tutorial Links
 - Husky Cartographer Tutorial:  https://github.com/husky/husky_cartographer_navigation
