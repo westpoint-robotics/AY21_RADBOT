@@ -14,12 +14,13 @@ RadBot (Radiation Robot) is a tethered, manually operated robot that has the abi
 - Google Cartographer
 - HUSKY A200
 - 16 Channel LiDAR
+- Amcrest Infrared Security Camera
 - ROS Kinetic
 - Ubuntu 16.04
 
 ## Github Files Info
 ### Control
-This folder contains scripts to control the hardware systems on the Husky A200 including the third-party camera
+This folder contains scripts to control the hardware systems on the Husky A200 including the Amcrest camera
 ### Interface
 This folder contains scripts to interface with the Husky's network and the Lidar's network
 ### Visualize
