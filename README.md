@@ -54,7 +54,7 @@ https://google-cartographer-ros.readthedocs.io/en/latest/
 https://github.com/husky/husky_cartographer_navigation
 
 ## Heatmap
-The heatmap was based on inserting 2D spheres at a specifc X,Y,Z coordinate in Rviz. This coordinate is supposed to be derived from RADBOT's transform ROS topic. We were unable to fully implement functionality with the transform ROS topic due to difficulties with the pub-sub nature of ROS. We substituted by inserting random datapoints into the algorithm as a proof of concept. (https://wiki.ros.org/rviz/Tutorials/Markers:%20Basic%20Shapes)  
+The heatmap was based on inserting 2D spheres at a specifc X,Y,Z coordinate in Rviz. This coordinate is supposed to be derived from RadBot's transform ROS topic. We were unable to fully implement functionality with the transform ROS topic due to difficulties with the pub-sub nature of ROS. We substituted by inserting random datapoints into the algorithm as a proof of concept. (https://wiki.ros.org/rviz/Tutorials/Markers:%20Basic%20Shapes)  
 ### Final Videos
 https://youtu.be/AtxlUbtp6-c (updated)
 https://youtu.be/2OxCcPV-RPg (original)
