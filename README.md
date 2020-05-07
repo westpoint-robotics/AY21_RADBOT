@@ -19,8 +19,7 @@ RadBot (Radiation Robot) is a tethered, manually operated robot that has the abi
 ## Github Files Info
 
 ## Where to Start?
-Become familiar with ROS (http://wiki.ros.org/ROS/StartGuide)\n
-
+Become familiar with ROS (http://wiki.ros.org/ROS/StartGuide)
 Become familiar with C and C++
 
 ## Setting Up Catkin Workspace
@@ -28,6 +27,12 @@ Catkin is the official build system of ROS and the successor to the original ROS
 
 Create a workspace: http://wiki.ros.org/catkin/Tutorials/create_a_workspace
 
-## Tutorial Links
-- Husky Cartographer Tutorial:  https://github.com/husky/husky_cartographer_navigation
-- Heatmap Tutorial: https://wiki.ros.org/rviz/Tutorials/Markers:%20Basic%20Shapes
+## Google Cartographer
+https://google-cartographer.readthedocs.io/en/latest/
+https://google-cartographer-ros.readthedocs.io/en/latest/
+
+## Husky Integration with Google Cartographer
+https://github.com/husky/husky_cartographer_navigation
+
+## Heatmap
+https://wiki.ros.org/rviz/Tutorials/Markers:%20Basic%20Shapes
