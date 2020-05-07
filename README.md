@@ -44,7 +44,8 @@ Rviz (ROS visualization) is a three-dimensional visualization tool for ROS. With
 
 ## Setting Up Catkin Workspace
 Catkin is the official build system of ROS and the successor to the original ROS build system, rosbuild. catkin combines CMake macros and Python scripts to provide some functionality on top of CMake's normal workflow. catkin was designed to be more conventional than rosbuild, allowing for better distribution of packages, better cross-compiling support, and better portability. catkin's workflow is very similar to CMake's but adds support for automatic 'find package' infrastructure and building multiple, dependent projects at the same time. The name catkin comes from the tail-shaped flower cluster found on willow trees -- a reference to Willow Garage where catkin was created. (http://wiki.ros.org/catkin/conceptual_overview)  
-Create a workspace: http://wiki.ros.org/catkin/Tutorials/create_a_workspace
+
+How to create a catkin workspace: http://wiki.ros.org/catkin/Tutorials/create_a_workspace
 
 ## Google Cartographer
 These links serve as basic research tools for the Google Cartographer mapping algorithm. Our group found that Google Cartographer was the best mapping option because of its excellent documentation, ease of use and up-to-date development.
