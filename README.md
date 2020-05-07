@@ -29,12 +29,12 @@ This folder contains the visualization maps including code for the heatmap
 This folder contains the workspace setup necessary to run the simulation files
 
 ## Where to Start?
-Become familiar with ROS (http://wiki.ros.org/ROS/StartGuide)
-Become familiar with C and C++
-Run through some tutorials (http://wiki.ros.org/ROS/Tutorials)
+Become familiar with ROS (http://wiki.ros.org/ROS/StartGuide)  
+Become familiar with C and C++  
+Run through some tutorials (http://wiki.ros.org/ROS/Tutorials)  
 
 ## Running The Simulation
-Run tests with the Jackal (https://www.clearpathrobotics.com/assets/guides/kinetic/jackal/simulation.html)
+Run tests with the Jackal to become familiar with the Gazebo and the Rviz virtual environments (https://www.clearpathrobotics.com/assets/guides/kinetic/jackal/simulation.html)
 
 ### Gazebo
 Gazebo is a simulated three-dimensional environment with realistic physics meant to test software functionality
@@ -47,14 +47,17 @@ Catkin is the official build system of ROS and the successor to the original ROS
 Create a workspace: http://wiki.ros.org/catkin/Tutorials/create_a_workspace
 
 ## Google Cartographer
-https://google-cartographer.readthedocs.io/en/latest/
-https://google-cartographer-ros.readthedocs.io/en/latest/
+These links serve as basic research tools for the Google Cartographer mapping algorithm. Our group found that Google Cartographer was the best mapping option because of its excellent documentation, ease of use and up-to-date development.
+(https://google-cartographer.readthedocs.io/en/latest/)  
+(https://google-cartographer-ros.readthedocs.io/en/latest/)  
 
 ## Husky Integration with Google Cartographer
-https://github.com/husky/husky_cartographer_navigation
+This tutorial formed the foundation of our project. We used this tutorial to set up Google Cartographer with the Husky. From here you are able to modify the catkin files to achieve specific project goals. Our group did not put much focus into modifying the catkin files.
+(https://github.com/husky/husky_cartographer_navigation)  
 
 ## Heatmap
 The heatmap was based on inserting 2D spheres at a specifc X,Y,Z coordinate in Rviz. This coordinate is supposed to be derived from RadBot's transform ROS topic. We were unable to fully implement functionality with the transform ROS topic due to difficulties with the pub-sub nature of ROS. We substituted by inserting random datapoints into the algorithm as a proof of concept. (https://wiki.ros.org/rviz/Tutorials/Markers:%20Basic%20Shapes)  
-### Final Videos
-https://youtu.be/AtxlUbtp6-c (updated)
-https://youtu.be/2OxCcPV-RPg (original)
+
+## Final Videos
+https://youtu.be/AtxlUbtp6-c (updated)  
+https://youtu.be/2OxCcPV-RPg (original)  
