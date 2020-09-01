@@ -1,7 +1,7 @@
 # RADBOT
 
 ## Project Description
-RadBot (Radiation Robot) is a tethered, manually operated robot that has the ability to operate in high-radiation environments with the purpose of performing unmanned reconnaissance
+RadBot (Radiation Robot) is an autonomous robot that has the ability to operate in high-radiation environments with the purpose of performing unmanned reconnaissance
 
 ## Project Objectives
 - Tether Tangling Prevention  
