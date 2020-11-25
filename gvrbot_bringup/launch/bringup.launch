@@ -20,6 +20,6 @@
     <arg name="joystick" value="true"/>
   </include>
   
-    <include file="$(find gvrbot_lidar)/launch/os1.launch"/>
+    <include file="$(find gvrbot_lidar)/launch/VLP16_points.launch"/>
   
 </launch>
