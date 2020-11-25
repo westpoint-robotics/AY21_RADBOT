@@ -1,5 +1,0 @@
-<launch>
-  <param name="use_gui" value="true"/>
-  <arg name="config" default="sensor_test" />
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find radbot)/rviz/$(arg config).rviz" />
-</launch>
