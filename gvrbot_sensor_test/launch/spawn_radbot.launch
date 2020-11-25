@@ -1,0 +1,23 @@
+<launch>
+  <arg name="x" default="0" />
+  <arg name="y" default="0" />
+  <arg name="z" default="1" />
+  <arg name="yaw" default="0" />
+  <arg name="joystick" default="true" />
+
+  <!-- Configuration of Radbot. -->
+  <arg name="config" default="base" />
+
+  <!-- Load Radbot's description, controllers, and teleop nodes. -->
+  <include file="$(find radbot)/launch/description.launch">
+    <arg name="config" value="$(arg config)" />
+  </include>
+  <include file="$(find radbot)/launch/control.launch" />
+  <include file="$(find radbot)/launch/teleop.launch">
+    <arg name="joystick" value="$(arg joystick)" />
+  </include>
+
+  <!-- Spawn Radbot -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
+	      args="-urdf -model radbot -param robot_description -x $(arg x) -y $(arg y) -z $(arg z) -R 0 -P 0 -Y $(arg yaw)" />
+</launch>
