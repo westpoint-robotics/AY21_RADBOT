@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!--
+    As you add to this URDF, please be aware that both the robot and
+    simulation include it. You must retain compatibility with all of
+    the following launch files:
+    sara_viz/launch/view_model.launch
+    sara_gazebo/launch/sara_world.launch
+  -->
+
+  <!-- Macros to generate standoffs for offset payload mounting. -->
+  <xacro:include filename="$(find sara_description)/urdf/accessories/standoffs.urdf.xacro" />
+
+  <!-- This optional plate mounts both the upgraded GPS and the Velodyne 3D LIDAR. -->
+  <xacro:include filename="$(find sara_description)/urdf/accessories/bridge_plate.urdf.xacro" />
+
+  <!-- If enabled, generate the LASER payload (by default, a SICK LMS111).
+  <xacro:if value="$(optenv sara_LASER 0)">
+    <xacro:if value="$(optenv sara_LASER_TYPE 2)">   -->
+
+
+  <xacro:include filename="$(find ouster_description)/urdf/OS1-64.urdf.xacro"/>
+  <xacro:OS1-64 parent="top_mount" name="os1_sensor" hz="10" samples="220">
+    <origin xyz="0 0 0.18" rpy="0 0 0" />
+  </xacro:OS1-64>  
+
+
+     <!--    </xacro:if>
+    <xacro:if value="$(optenv sara_LASER_TYPE 1)">
+      <xacro:include filename="$(find sara_description)/urdf/accessories/hokuyo_ust10.urdf.xacro" />
+      <xacro:hokuyo_ust10_mount prefix="$(optenv sara_LASER_MOUNT top)"
+                          topic="$(optenv sara_LASER_TOPIC front/scan)" />
+      <joint name="$(optenv sara_LASER_MOUNT top)_laser_mount_joint" type="fixed">
+        <origin xyz="$(optenv sara_LASER_OFFSET 0 0 0.18)"
+                rpy="$(optenv sara_LASER_RPY 0 0 0)" />
+        <parent link="$(optenv sara_LASER_MOUNT top)_mount" />
+        <child link="$(optenv sara_LASER_MOUNT top)_laser_mount" />
+      </joint>
+    </xacro:if>
+    <xacro:if value="$(optenv sara_LASER_TYPE 0)">
+      <xacro:include filename="$(find sara_description)/urdf/accessories/sick_lms1xx_mount.urdf.xacro" /> 
+      <xacro:sick_lms1xx_mount prefix="$(optenv sara_LASER_MOUNT top)"
+                         topic="$(optenv sara_LASER_TOPIC front/scan)"/>
+      <joint name="$(optenv sara_LASER_MOUNT top)_laser_mount_joint" type="fixed">
+        <origin xyz="$(optenv sara_LASER_OFFSET 0 0 0.18)"
+                rpy="$(optenv sara_LASER_RPY 0 0 0)" />
+        <parent link="$(optenv sara_LASER_MOUNT top)_mount" />
+        <child link="$(optenv sara_LASER_MOUNT top)_laser_mount" />
+      </joint>
+    </xacro:if>
+  </xacro:if>
+ -->
+  <!-- If enabled, generate the upgraded Navsat payload (a Novatel Smart6). -->
+  <xacro:if value="$(optenv sara_NAVSAT 0)">
+    <xacro:include filename="$(find sara_description)/urdf/accessories/novatel_smart6.urdf.xacro" />
+    <xacro:bridge_plate mount="$(optenv sara_NAVSAT_MOUNT rear)"
+                  height="$(optenv sara_NAVSAT_HEIGHT 0.1)" />
+    <xacro:novatel_smart6 prefix="$(optenv sara_NAVSAT_MOUNT rear)"/>
+
+    <joint name="$(optenv sara_NAVSAT_MOUNT rear)_navsat_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="$(optenv sara_NAVSAT_MOUNT rear)_bridge" />
+      <child link="$(optenv sara_NAVSAT_MOUNT rear)_navsat" />
+    </joint>
+  </xacro:if>
+
+</robot>

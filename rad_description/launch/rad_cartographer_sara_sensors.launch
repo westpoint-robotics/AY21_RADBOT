@@ -1,0 +1,46 @@
+<launch>
+  <!-- The "which_scan" parameter determines which sensor (Ouster OS1-64 or 
+  Realsense D435i) will have the pointcloud it publishes mapped into a laserscan
+  for use in Google Cartographer -->
+  <arg name="which_scan" default="ouster"/>
+  
+  <!-- Launch Gazebo for the Jackal -->
+  <include file="$(find gvrbot_gazebo)/launch/gvrbot_world.launch" /> <!--radbot_world.launch" />-->
+  <!-- Wait for 22 ("time") seconds and then launch the pointcloud to laserscan
+  node for the Ouster, if that is the selected pointcloud sensor -->
+  <group if="$(eval arg('which_scan') == 'ouster')">
+    <include file="$(find timed_roslaunch)/launch/timed_roslaunch.launch">
+      <arg name="time" value="22" />
+      <arg name="pkg" value="pc2l" />
+      <arg name="file" value="pc2l_ouster.launch" />
+      <arg name="value" value="which_scan:=ouster" />
+    </include>
+  </group>
+  <!-- Wait for 22 ("time") seconds and then launch the pointcloud to laserscan
+  node for the Realsense, if that is the selected pointcloud sensor -->
+  <group if="$(eval arg('which_scan') == 'realsense')">
+    <include file="$(find timed_roslaunch)/launch/timed_roslaunch.launch">
+      <arg name="time" value="22" />
+      <arg name="pkg" value="pc2l" />
+      <arg name="file" value="pc2l_realsense.launch" />
+      <arg name="value" value="which_scan:=realsense" />
+    </include>
+  </group>
+  <!-- Wait for 10 ("time") seconds and then launch Cartographer for Jackal -->
+  <include file="$(find timed_roslaunch)/launch/timed_roslaunch.launch">
+    <arg name="time" value="10" />
+    <arg name="pkg" value="gvrbot_cartographer_navigation" />
+    <arg name="file" value="cartographer_demo.launch" />
+  </include>
+  <!-- Wait for 15 ("time") seconds and then launch the RViz for Jackal with the
+  view_robot node.  This will allow visualization of the robot, its map, and
+  laser scan data.  The node will also allow 2D pose targets to be placed for
+  the Jackal to navigate to using Cartographer. -->
+  <include file="$(find timed_roslaunch)/launch/timed_roslaunch.launch">
+    <arg name="time" value="15" />
+    <arg name="pkg" value="gvrbot_viz" />
+    <arg name="file" value="view_robot.launch" />
+    <arg name="value" value="config:=gmapping" />
+  </include>
+
+</launch>

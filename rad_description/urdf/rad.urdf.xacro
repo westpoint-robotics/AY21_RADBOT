@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<robot name="rad" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="rad" params="parent_link">
+  
+  <!--
+  <xacro:include filename="$(find ouster_description)/urdf/OS1-64.urdf.xacro"/>
+  -->
+  <xacro:include filename="$(find velodyne_description)/urdf/HDL-32E.urdf.xacro"/>
+
+  <link name="unit_base_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://rad_description/meshes/rad_model.stl" />
+         
+      </geometry>
+      <material name="light_grey" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.07" rpy="0 0 0" />
+      <geometry>
+        <box size="0.32 0.25 0.14" rpy="0 0 0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="unit_base_joint" type="fixed">
+    <parent link="${parent_link}" />
+    <child link="unit_base_link" />
+    <origin xyz="0.0 0.0 0.1675" rpy="0 0 0" />
+    
+  </joint>
+
+  <!-- NBL: Lidar Link (Ouster OS1-64 parameters using Velodyne plugins) -->
+  <!--
+  <link name="lidar_link"/>
+  <joint name="lidar_joint" type="fixed">
+    <parent link="unit_base_link" />
+    <child link="lidar_link" />
+    <origin xyz="0.0 0 0.740725" rpy="0 0 1.5708" />
+  </joint>
+  <xacro:VLP-16 parent="unit_base_link" name="velodyne" topic="/velodyne_points" hz="10" samples="512">
+    <origin xyz="0 0 0.740725" rpy="0 0 1.5708" />
+  </xacro:VLP-16>
+  -->
+  <xacro:HDL-32E parent="unit_base_link" name="velodyne2" topic="/velodyne_points2" hz="10" samples="512">
+    <origin xyz="0 0 0.740725" rpy="0 0 1.5708" />
+  </xacro:HDL-32E>
+  <!--
+  <xacro:OS1-64 topic_points="os1_cloud_node/points" parent="unit_base_link">
+    <origin xyz="0 0 0.335" rpy="0 0 0" />
+  </xacro:OS1-64>
+  -->
+  <!-- Microstrain IMU LINK -->
+  <link name="microstrain_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://rad_description/meshes/3DM_GX5_35.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.6604" rpy="0 0 0" />
+      <geometry>
+        <box size="0.32 0.25 0.14" rpy="0 0 0"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="microstrain_joint" type="fixed">
+    <parent link="unit_base_link" />
+    <child link="microstrain_link" />
+    <origin xyz="0 0 0.6604" rpy="0 0 0" />
+  </joint>
+
+  </xacro:macro>
+</robot>
