@@ -1,0 +1,7 @@
+<!-- Publish diagnostics information from low-level MCU outputs -->
+
+<launch>
+
+    <node pkg="web_video_server" name="web_video_server" type="web_video_server" />
+
+</launch>

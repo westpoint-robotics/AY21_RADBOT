@@ -15,13 +15,21 @@
   <!-- This optional plate mounts both the upgraded GPS and the Velodyne 3D LIDAR. -->
   <xacro:include filename="$(find gvrbot_description)/urdf/accessories/bridge_plate.urdf.xacro" />
 
-  <!-- Velodyne-16 -->
+  <!-- Add Velodyne-16 -->
   <xacro:arg name="gpu" default="false"/>
   <xacro:property name="gpu" value="$(arg gpu)" />
   <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
   <xacro:VLP-16 parent="base_link" name="velodyne" topic="/velodyne_points" hz="10" samples="440" gpu="${gpu}">
     <origin xyz="0 0 0.5" rpy="0 0 0" />
   </xacro:VLP-16>
+
+  <!-- Add D435i Depth Sensor -->
+  <xacro:arg name="use_nominal_extrinsics" default="true"/>
+  <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro" />   
+  
+  <xacro:sensor_d435 parent="base_link" use_nominal_extrinsics="$(arg use_nominal_extrinsics)">
+    <origin xyz="0 0 0.3" rpy="0 0 0"/>
+  </xacro:sensor_d435>
 
   <!-- If enabled, generate the LASER payload (by default, a SICK LMS111).
   <xacro:if value="$(optenv GVRBOT_LASER 0)">
