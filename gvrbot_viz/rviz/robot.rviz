@@ -203,6 +203,45 @@ Visualization Manager:
       Transport Hint: raw
       Unreliable: false
       Value: true
+    - Alpha: 1
+      Class: rviz_plugin_tutorials/Imu
+      Color: 204; 51; 204
+      Enabled: false
+      History Length: 1
+      Name: Imu
+      Topic: /gx5/imu/data
+      Unreliable: false
+      Value: false
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 100
+      Min Color: 0; 0; 0
+      Min Intensity: 1
+      Name: PointCloud2
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.009999999776482582
+      Style: Flat Squares
+      Topic: /velodyne_points
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -219,25 +258,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.2547646760940552
+      Distance: 2.112191915512085
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.019164079800248146
-        Y: 0.07468680292367935
-        Z: 0.38443315029144287
+        X: -0.11863136291503906
+        Y: 0.03928476944565773
+        Z: 0.39481717348098755
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.4103981852531433
+      Pitch: 0.580398678779602
       Target Frame: base_link
       Value: Orbit (rviz)
-      Yaw: 1.5572601556777954
+      Yaw: 0.13226473331451416
     Saved: ~
 Window Geometry:
   Displays:
@@ -257,5 +296,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1853
-  X: 256
-  Y: 216
+  X: 1325
+  Y: 219
