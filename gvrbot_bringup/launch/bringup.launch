@@ -16,8 +16,8 @@
     <arg name="config" value="$(arg config)" />
   </include>
   <include file="$(find gvrbot_control)/launch/control.launch" />
-  <include file="$(find gvrbot_control)/launch/teleop.launch">
-    <arg name="joystick" value="true"/>
+  <include file="$(find gvrbot)/launch/xbox360_teleop.launch">
+    
   </include>
  
   <include file="$(find gvrbot_viz)/launch/view_robot.launch"/>

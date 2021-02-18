@@ -21,14 +21,14 @@
               $(find gvrbot_cartographer_navigation)/config
           -configuration_basename gvrbot.lua"
       output="screen">
-    <remap from="scan" to="front/scan" />
+<!--    <remap from="scan" to="front/scan" />-->
     <remap from="odom" to="odometry/filtered" /><!--   -->
   </node>
 
   <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"
       type="cartographer_occupancy_grid_node" args="-resolution 0.05" />
 
-  <!--- Run Move Base -->
-  <include file="$(find gvrbot_navigation)/launch/include/move_base.launch" />
+  <!--- Run Move Base == Not used with Real GVRbot as this is already running -->
+<!--  <include file="$(find gvrbot_navigation)/launch/include/move_base.launch" />-->
 
 </launch>

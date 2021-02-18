@@ -2,7 +2,7 @@
 #
 frequency: 50
 
-odom0: /gvrbot_velocity_controller/odom
+odom0: /gvrbot/odom
 odom0_config: [false, false, false,
                false, false, false,
                true, true, true,
@@ -10,7 +10,7 @@ odom0_config: [false, false, false,
                false, false, false]
 odom0_differential: false
 
-imu0: /os1_cloud_node/imu
+imu0: /gx5/imu/data
 imu0_config: [false, false, false,
               true, true, true,
               false, false, false,
