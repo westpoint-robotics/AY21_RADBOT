@@ -40,7 +40,7 @@
   <include file="$(find gvrbot_navigation)/launch/include/move_base.launch"/>
 
   <!-- DML created this node to flip the cmd vel rotation published to the robot  -->
-  <node package='gvrbot_control' type='control_flip.py' name='control_flip'/>
+  <node pkg='gvrbot_control' type='control_flip.py' name='control_flip'/>
 
 <!--
 http://localhost:8080/stream?topic=/camera/color/image_raw&type=ros_compressed
