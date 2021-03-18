@@ -1,5 +1,6 @@
 <launch>
   <param name="use_gui" value="true"/>
   <arg name="config" default="robot" />
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find gvrbot_viz)/rviz/$(arg config).rviz" />
+<!--  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find gvrbot_viz)/rviz/$(arg config).rviz" />-->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find gvrbot_viz)/rviz/gmapping.rviz" />
 </launch>
