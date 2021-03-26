@@ -12,7 +12,7 @@ Repo for RADBOT
 
     roslaunch gvrbot_bringup bringup.launch
 
-Dependencies
+Dependencies\
     velodyne_description:\
     sudo apt-get install ros-melodic-velodyne-description
     realsense2-description:\
