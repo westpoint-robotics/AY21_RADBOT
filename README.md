@@ -1,4 +1,3 @@
-:laughing:
 # AY21_RADBOT
 
 ## Overview
@@ -18,5 +17,4 @@ Dependencies
     sudo apt-get install ros-melodic-velodyne-description
     realsense2-description
     sudo apt-get install ros-melodic-realsense2-description 
-    gvrbot?
-:dizzy_face:
+    gvrbot
