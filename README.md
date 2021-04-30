@@ -3,6 +3,11 @@
 ## Overview
 Repo for RADBOT
 
+## Initial Setup
+    clone this repository
+    Set Udev rules
+    Configure IP addresses
+    
 ## Simulating RADBOT
 
     roslaunch gvrbot_gazebo gvrbot_world.launch
