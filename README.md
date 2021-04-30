@@ -6,7 +6,7 @@ Repo for RADBOT
 ## Initial Setup
     clone this repository
     Set Udev rules
-    Configure IP addresses
+    Follow Connection_guide.md
     
 ## Simulating RADBOT
 
