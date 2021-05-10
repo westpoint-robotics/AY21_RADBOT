@@ -4,10 +4,10 @@
 Repo for RADBOT
 
 ## Initial Setup
-    clone this repository
-    Install dependencies located below
-    Set Udev rule for Inertial Measurement Unit (Microstrain 3DM-GX5)
-    Follow Connection_guide.md
+    1. Clone this repository
+    2. Install dependencies located below
+    3. Set Udev rule for Inertial Measurement Unit (Microstrain 3DM-GX5)
+    4. Follow Connection_guide.md
     
 ## Simulating RADBOT
 
