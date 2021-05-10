@@ -3,8 +3,8 @@
 ## Overview
 Repo for RADBOT
 
-ROS Version: Melodic
-Ubuntu Version: 16.04
+ROS Version: Melodic  
+Ubuntu Version: 16.04  
 
 ## Initial Setup
     1. Clone this repository
